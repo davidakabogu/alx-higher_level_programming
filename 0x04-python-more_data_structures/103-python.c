@@ -2,10 +2,8 @@
 #include <Python.h>
 
 /**
- * print_python_bytes - Prints bytes information
- *
+ * print_python_bytes - thism function prints bytes information
  * @p: Python Object
- * Return: no return
  */
 void print_python_bytes(PyObject *p)
 {
@@ -18,7 +16,6 @@ void print_python_bytes(PyObject *p)
 		printf("  [ERROR] Invalid Bytes Object\n");
 		return;
 	}
-
 	size = ((PyVarObject *)(p))->ob_size;
 	string = ((PyBytesObject *)p)->ob_sval;
 
@@ -33,19 +30,18 @@ void print_python_bytes(PyObject *p)
 	printf("  first %ld bytes:", limit);
 
 	for (i = 0; i < limit; i++)
+	{
 		if (string[i] >= 0)
 			printf(" %02x", string[i]);
 		else
 			printf(" %02x", 256 + string[i]);
-
+	}
 	printf("\n");
 }
 
 /**
- * print_python_list - Prints list information
- *
+ * print_python_list - this function prints list information
  * @p: Python Object
- * Return: no return
  */
 void print_python_list(PyObject *p)
 {
