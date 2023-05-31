@@ -20,16 +20,6 @@ class Square:
 
     @size.setter
     def size(self, value):
-        """
-        Validates and sets the size of the square.
-
-        Args:
-            value (int): The size of the square.
-
-        Raises:
-            TypeError: If the size is not an integer.
-            ValueError: If the size is less than 0.
-        """
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
         elif value < 0:
@@ -38,4 +28,4 @@ class Square:
 
     def area(self):
         """ Calculates and returns the area of the square. """
-        return self.__size * self.__size
+        return self.__size ** 2
