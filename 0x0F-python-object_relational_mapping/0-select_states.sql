@@ -6,16 +6,15 @@ USE hbtn_0e_0_usa;
 
 -- Create a table named 'states' with ID and name columns
 CREATE TABLE IF NOT EXISTS states (
-    id INT NOT NULL AUTO_INCREMENT,
-    name VARCHAR(256) NOT NULL,
-    PRIMARY KEY (id)
+	id INT NOT NULL AUTO_INCREMENT,
+	name VARCHAR(256) NOT NULL,
+	PRIMARY KEY (id)
 );
 
 -- Insert sample data into the 'states' table
-INSERT INTO states (name) VALUES 
-    ("California"), 
-    ("Arizona"), 
-    ("Texas"), 
-    ("New York"), 
-    ("Nevada");
-
+INSERT INTO states (name) VALUES
+	("California"),
+	("Arizona"),
+	("Texas"),
+	("New York"),
+	("Nevada");

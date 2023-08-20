@@ -15,22 +15,16 @@ if __name__ == "__main__":
 
     db_connection = MySQLdb.connect(**db_params)
     cursor = db_connection.cursor()
-    
+
     # Retrieve states starting with 'N' in their name
-    query = """
-            SELECT * 
-            FROM states 
-            WHERE name LIKE BINARY 'N%' 
-            ORDER BY states.id
-            """
+    query = """SELECT * FROM states """
     cursor.execute(query)
-    
+
     # Fetch and display results
     rows = cursor.fetchall()
     for row in rows:
         print(row)
-    
+
     # Close the cursor and database connection
     cursor.close()
     db_connection.close()
-
