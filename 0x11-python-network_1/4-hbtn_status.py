@@ -10,7 +10,7 @@ if __name__ == "__main__":
     if response.status_code == 200:
         content = response.json()
         print("Body response:")
-        print("\t- type:", type(content))
-        print("\t- content:", content)
+        print("\t- type: {}".format(type(content)))
+        print("\t- content: {}".format(content))
     else:
         print("Error: Unable to fetch the URL. Status code:", response.status_code)
