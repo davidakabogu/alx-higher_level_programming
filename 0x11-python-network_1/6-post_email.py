@@ -5,11 +5,23 @@
 - of the X-Request-Id variable found in the header ofthe response.
 """
 import sys
-import urllib.request
+import requests
 
 if __name__ == "__main__":
     url = sys.argv[1]
+    email = sys.argv[2]
 
-    request = urllib.request.Request(url)
-    with urllib.request.urlopen(request) as response:
-        print(dict(response.headers).get("X-Request-Id"))
+    # Create a dictionary with the email parameter
+    data = {"email": email}
+
+    # Send a POST request to the URL with the email parameter
+    response = requests.post(url, data=data)
+
+    # Check if the request was successful (status code 200)
+    if response.status_code == 200:
+        print("Response Body:")
+        print(response.text)
+    else:
+        print(
+            f"Failed to send POST request. Status Code: {response.status_code}"
+            )
