@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-# this function finds a peak in a list of unsorted integers.
-# a peak is a number that is greater than its adjacent numbers
+""" this function finds a peak in a list of unsorted integers.
+a peak is a number that is greater than its adjacent numbers """
 
 def find_peak(list_of_integers):
 
